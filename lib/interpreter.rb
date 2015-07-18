@@ -13,6 +13,8 @@ class Interpreter
           output += @tape[@index].chr
         when ','
           @tape[@index] = gets.chomp.ord
+        when '+'
+          @tape[@index] += 1
       end
     end
 

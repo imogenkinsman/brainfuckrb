@@ -29,9 +29,14 @@ describe "when interpreting source code" do
   end
 
   it "moves the pointer to the right when encountering '>'" do
+    output = @interpreter.execute("+>.")
+    expect(output.ord).to eq(0)
   end
 
   it "moves the pointer to the left when encountering '<'" do
+    @interpreter.stub(:gets) { "A" }
+    output = @interpreter.execute(",><.")
+    expect(output).to eq("A")
   end
 
   describe "when encountering '['" do

@@ -17,6 +17,10 @@ class Interpreter
           @tape[@index] += 1
         when '-'
           @tape[@index] -= 1
+        when '>'
+          @index += 1
+        when '<'
+          @index -= 1
       end
     end
 

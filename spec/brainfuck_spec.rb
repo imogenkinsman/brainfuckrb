@@ -25,7 +25,7 @@ describe "when interpreting source code" do
   it "decrements the memory cell under the pointer when encountering '-'" do
     @interpreter.stub(:gets) { "B" }
     output = @interpreter.execute(",-.")
-    expect(output).to eq("B")
+    expect(output).to eq("A")
   end
 
   it "moves the pointer to the right when encountering '>'" do

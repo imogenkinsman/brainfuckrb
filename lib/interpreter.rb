@@ -15,6 +15,8 @@ class Interpreter
           @tape[@index] = gets.chomp.ord
         when '+'
           @tape[@index] += 1
+        when '-'
+          @tape[@index] -= 1
       end
     end
 

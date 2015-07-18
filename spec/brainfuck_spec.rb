@@ -12,7 +12,9 @@ describe "when interpreting source code" do
   end
 
   it "inputs a character and stores it in the cell at the pointer when encountering ','" do
-
+    @interpreter.stub(:gets) { "A" }
+    output = @interpreter.execute(",.")
+    expect(output).to eq("A")
   end
 
   it "increments the memory cell under the pointer when encountering '+'" do

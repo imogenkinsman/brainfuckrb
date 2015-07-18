@@ -5,7 +5,18 @@ class Interpreter
   end
 
   def execute(str)
+    output = ''
 
+    str.each_char do |char|
+      case char
+        when '.'
+          output += @tape[@index].chr
+        when ','
+          @tape[@index] = gets.chomp.ord
+      end
+    end
+
+    output
   end
 
 end
